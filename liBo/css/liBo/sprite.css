@@ -1,0 +1,45 @@
+.liBoSpritePreview-preview-close {
+  background-position: 0 0;
+  width: 40px;
+  height: 40px;
+}
+.liBoSpritePreview-preview-remind {
+  background-position: 0 -45px;
+  width: 203px;
+  height: 120px;
+}
+.liBoSpritePreview-preview-share {
+  background-position: 0 -170px;
+  width: 87px;
+  height: 125px;
+}
+.liBoSpriteMain-arrow-left {
+  background-position: 0 0;
+  width: 50px;
+  height: 70px;
+}
+.liBoSpriteMain-arrow-right {
+  background-position: 0 -75px;
+  width: 50px;
+  height: 70px;
+}
+.liBoSpriteMain-detail {
+  background-position: 0 -150px;
+  width: 168px;
+  height: 52px;
+}
+.liBoSpriteMain-paihangbang {
+  background-position: 0 -207px;
+  width: 168px;
+  height: 52px;
+}
+.liBoSpriteMain-select {
+  background-position: 0 -264px;
+  width: 60px;
+  height: 60px;
+}
+.liBoSpriteMain-selected {
+  background-position: 0 -329px;
+  width: 60px;
+  height: 60px;
+}

@@ -1,0 +1,410 @@
+@import "animation";
+@import "slider";
+@import "base";
+
+.l-layer {
+    position: fixed;
+    left: 0;
+    top: 0;
+//    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.l-icon {
+    display: block;
+}
+
+.mainLayer {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    overflow: auto;
+    padding-bottom: 10px;
+    background-size: 100% auto;
+    min-height: 100%;
+}
+
+.mainHeader {
+    margin-top: 10px;
+}
+
+.mainHeader-mainTitle {
+    text-align: center;
+    & > img {
+        height: 35px;
+    }
+}
+
+.mainHeader-description {
+    .px2percentOfWidth(440, 640);
+    font-size: 28px / 2;
+    line-height: 18px;
+    word-break: break-all;
+    color: #12a9f0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+}
+
+.card {
+    width: 90% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cardFront {
+    position: relative;
+    padding: 30px / 2;
+    background-size: 100% 102%;
+    background-repeat: no-repeat;
+    background-image: url('http://weijing.qiniudn.com/promotion-liBo-cardBg.png');
+    background-position: 0 0;
+    img {
+        width: 100%;
+        display: block;
+    }
+    & > div {
+        position:absolute;
+        left:0;
+        top:0;
+        padding:15px 15px 15px 16px;
+    }
+}
+.cardInfo {
+    position:relative;
+    z-index:3;
+    margin-left: 1.5%;
+    margin-top: -16px;
+    width: 120%;
+}
+
+.l-slider {
+    position: relative;
+    .px2percentOfWidth(580, 640);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider-btn {
+    position: absolute;
+    width: 25px;
+    height: 35px;
+    background-size: 161px / 2 auto;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    &-prev {
+        left: -15px;
+        background-position: 0 0;
+    }
+    &-next {
+        right: -15px;
+        background-position: 0 -73px / 2;
+    }
+}
+
+.linkBar {
+    position: absolute;
+    top: 415px;
+    left: 0;
+    &-item {
+        width: 170px / 2;
+        height: 53px / 2;
+        background-size: 170px / 2 auto;
+    }
+    &-detail {
+        background-position: 0 -150px / 2;
+    }
+    &-rank {
+        margin-top: 5px;
+        background-position: 0 -207px / 2;
+    }
+}
+
+.selectBtn {
+    .px2percentOfWidth(236, 640);
+    & > img {
+        display: block;
+        width: 100%;
+    }
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// alert window layer
+.l-alert {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+//    解决iphone4屏幕太短，fixed定位无法罩到屏幕底部的问题
+    box-shadow: 0 100px 0 0 rgba(0,0,0,0.6);
+    -webkit-box-shadow: 0 100px 0 0 rgba(0,0,0,0.6);
+    &.is-alert-show {
+        display: block;
+    }
+}
+.alert-item {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-top: 42px;
+    .px2percentOfWidth(605, 640);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    font-size: 28px / 2;
+    color: #000000;
+}
+.alert-detail {
+    padding: 44px / 2 50px / 2 110px / 2;
+    min-height: 556px / 2;
+    display: none;
+    &.is-alertDetail-show {
+        display: block;
+    }
+    &-title {
+        font-weight: bold;
+        font-size: 30px / 2;
+    }
+    &-content {
+        padding-left: 20px;
+        margin-left: 0;
+    }
+    &-footer {
+        line-height: 40px / 2;
+        & > * {
+            vertical-align: bottom;
+        }
+        & > i {
+            display: inline-block;
+            width: 48px / 2;
+            height: 48px / 2;
+            background-size: 80px auto;
+            background-position: 0 24px;
+        }
+    }
+}
+.alert-rankList {
+    padding-top: 30px / 2;
+    padding-bottom: 20px / 2;
+    min-height: 665px / 2;
+    display: none;
+    &.is-alertRankList-show {
+        display: block;
+    }
+    p {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+.alert-rankList-content {
+    table {
+        width: 100%;
+        text-align: center;
+        vertical-align: middle;
+    }
+    td {
+        width: 50%;
+        padding: 5px 0;
+    }
+}
+.alert-rankList-separator {
+    margin: 0 auto;
+    border-style: dashed;
+    border-bottom: none;
+    .px2percentOfWidth(458, 605);
+}
+.alert-rankList-userCounter {
+    text-align: center;
+}
+.alert-status.is-alertStatus-show {
+    display: block;
+}
+.alert-status .status-window {
+    min-height: 200px/2;
+    padding: 50px / 2 80px / 2 30px / 2;
+    text-align: center;
+}
+.errorWindow {
+    display: none;
+    &.is-errorWindow-show {
+        display: block;
+    }
+}
+.subscribeWindow {
+    display: none;
+    &.is-subscribeWindow-show {
+        display: block;
+    }
+}
+.alert-status .status-content {
+    margin-top: 54px / 2;
+    margin-bottom: 45px / 2;
+    text-align: left;
+}
+.alert-status .status-btn {
+    display: inline-block;
+    line-height: 46px / 2;
+    min-width: 150px / 2;
+    background-color: #7FE5F4;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+// preview layer
+.previewLayer {
+    background-color: #e6e3de;
+    display: none;
+    &.is-previewLayer-show {
+        display: block;
+    }
+}
+.preview-remind {
+    position: absolute;
+    z-index: 2;
+    top: 20px / 2;
+    left: 30px / 2;
+    width: 240px / 2;
+    height: 142px / 2;
+    background-size: 120px auto;
+    background-position: 0 -25.5px;
+}
+.preview-close {
+    position: absolute;
+    z-index: 5;
+    width: 40px / 2;
+    height: 40px / 2;
+    top: 20px / 2;
+    right: 20px / 2;
+    background-size: 100px auto;
+    background-position: 0 0;
+}
+
+// rotating scope ====================
+.rotate-scope {
+    .px2percentOfWidth(583, 640);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 84px / 2;
+    position: relative;
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+.frontPage,
+.backPage {
+    position: absolute;
+    transition: all .7s;
+    -webkit-transition: all .7s;
+    transform-style: perserve-3d;
+    -webkit-transform-style: perserve-3d;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+.frontPage{
+    z-index: 3;
+    padding: 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-size: 100% 102%;
+    background-repeat: no-repeat;
+    background-image: url('http://weijing.qiniudn.com/promotion-liBo-cardBg.png');
+    & > img {
+        display: block;
+        width: 100%;
+    }
+}
+.backPage {
+    z-index: 2;
+    opacity: 0;
+    transform: rotateY(180deg) translateZ(0px);
+    -webkit-transform: rotateY(180deg) translateZ(0px);
+}
+.rotate-scope.is-turnOver {
+    .frontPage {
+        transform: rotateY(-180deg) translateZ(0px);
+        -webkit-transform: rotateY(-180deg) translateZ(10px);
+        opacity: 0;
+        z-index: 1;
+    }
+    .backPage {
+        transform: rotateY(0deg) translateZ(0px);
+        -webkit-transform: rotateY(0deg) translateZ(0px);
+        opacity: 1;
+    }
+}
+.infoPage {
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    max-width: 320px;
+    bottom: 14px;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+}
+.fillingPage {
+    visibility: hidden;
+    & > img {
+        width: 100%;
+    }
+}
+
+.sendBtn {
+    .px2percentOfWidth(237, 640);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 130px / 2;
+    & > img {
+        width: 100%;
+    }
+}
+
+.loadingOverlay {
+    position: fixed;
+    background-color: #e6e3de;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: none;
+    &.is-loadingOverlay-show {
+        display: block;
+    }
+    .loading {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }
+}
+
+// remindLayer
+.remindLayer {
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+    &.is-remindLayer-show {
+        display: block;
+    }
+    .remind-pointer {
+        float: right;
+        width: 88px / 2;
+        height: 125px / 2;
+        margin-right: 50px / 2;
+        background-size: 100px auto;
+        background-position: 0 -80px;
+    }
+    .remind-word {
+        clear: right;
+        color: #ffffff;
+        font-size: 17px;
+        line-height: 25px;
+        .px2percentOfWidth(566, 640);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

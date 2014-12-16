@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no"/>
+    <title>waterfall</title>
+    <link rel="stylesheet" href="style/waterfall.css"/>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            min-height: 100%;
+            background-color: #333;
+        }
+        .waterfall-wrapper {
+            margin-left: 20px;
+        }
+        .waterfall-card {
+            box-shadow: 0 0 2px 0 rgba(0,0,0,0.8);
+            border: 1px solid #222;
+        }
+        .info {
+            font-size: 30px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="haha"></div>
+<p class="info">正在疯狂加载.....</p>
+<script src="script/waterfall.js"></script>
+<script>
+    localStorage.clear();
+    var wtf = new OE.waterfall({
+        cardMaker: maker,
+        wrapper: '.haha',
+        column: 2,
+        width: 185,
+        columnGap: 10,
+        rowGap: 10,
+        ajaxUrl: 'mockData/',
+        noMoreData: noMoreData,
+        joinUrl: function(baseUrl, page){
+            page = page+'.json';
+            return baseUrl + page;
+        }
+    });
+    function maker(data){
+        var card = document.createElement('div');
+        card.innerHTML = '<img class="waterfall-image" src="'+data.img+'" style="display:block; width: 100%;"/>';
+        return card;
+    }
+    function noMoreData () {
+        var info = document.getElementsByClassName('info')[0];
+        info.textContent = '已经加载完毕！！';
+    }
+</script>
+</body>
+</html>

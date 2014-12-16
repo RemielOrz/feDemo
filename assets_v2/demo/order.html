@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <title>订单</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no"/>
+    <!--<link rel='stylesheet' href='../css/module/oefont/css/oefont.css' />
+    <link rel='stylesheet' href='../css/base.css' />
+    <link rel='stylesheet' href='../css/module/calendar/calendar.css' />
+    <link rel='stylesheet' href='../css/module/modifier/modifier.css' />
+    <link rel='stylesheet' href='../css/app/app.css' />-->
+    <link rel='stylesheet' href='../css/build/app.css' />
+
+</head>
+<body>
+<div class="wrapper _disable-transform" id="page-order">
+    <div class="channel-header">出行日期</div>
+    <div id="calendar"></div>
+    <div class="order">
+        <table class="order__table">
+            <tr>
+                <td>成人</td>
+                <td id="order__modifier-1"></td>
+                <td>成人价格：￥999999</td>
+            </tr>
+            <tr>
+                <td>儿童</td>
+                <td id="order__modifier-2"></td>
+                <td>成人价格：￥999999</td>
+            </tr>
+            <tr>
+                <td>姓名</td>
+                <td colspan="2">
+                    <div class="__ipt">
+                        <input type="text" placeholder="请填写真实姓名"/>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>手机</td>
+                <td colspan="2">
+                    <div class="__ipt">
+                        <input type="text" placeholder="请填写真实手机"/>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="__ft">
+            <div class="__total">订单总额：￥99999</div>
+            <a class="u-btn" href="#">下一步</a>
+        </div>
+    </div>
+</div>
+<div class="status-box" id="status-box">
+    <div class="__item oefont-close">姓名不能为空</div>
+    <div class="__item oefont-close">姓名不能为空</div>
+    <div class="__item oefont-close">姓名不能为空</div>
+    <div class="__item oefont-close">姓名不能为空</div>
+    <div class="__item oefont-close">姓名不能为空</div>
+</div>
+<!--<script type="text/javascript" data-main="../js/app/demo/app" src="../js/build/require.js"></script>-->
+<script type="text/javascript" data-main="../js/dest/app/main" src="../js/build/require.js"></script>
+</body>
+</html>

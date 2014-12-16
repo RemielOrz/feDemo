@@ -1,0 +1,1 @@
+define(["OE","TabSelection"],function(a){console.log("Page Module: orderList");{var b=a.$;a.utils}b(".__nav").tabSelection({items:[{text:"未处理",value:0},{text:"已支付",value:1}]})});

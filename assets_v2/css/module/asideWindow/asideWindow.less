@@ -1,0 +1,97 @@
+/*!
+ * Created By remiel.
+ * Date: 14-10-21
+ * Time: 下午2:05
+ */
+@img_base_url: "/assets/images/";//图片路径
+@v: "?v=2014061301";
+
+@import "../../lib/base_var";
+@import "../../lib/mixins";
+
+@blue:#45c8f4;
+
+.ui-aside-win{
+    z-index:1001;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    //bottom:0;
+    height:100%;
+    .transition(-webkit-transform .4s ease 0.1s);
+    .transition(transform .4s ease 0.1s);
+    background:#fbfbfb;
+    color:#808080;
+
+    &._left{
+        padding-left:20%;
+        .translate(-100%, 0);
+        .translate3d(-100%, 0, 0);
+        &._active{
+            .translate(-20%, 0);
+            .translate3d(-20%, 0, 0);
+        }
+    }
+    &._right{
+        padding-right:20%;
+        .translate(100%, 0);
+        .translate3d(100%, 0, 0);
+        &._active{
+            .translate(20%, 0);
+            .translate3d(20%, 0, 0);
+        }
+    }
+    &._top{
+        padding-top:10%;
+        .box-sizing();
+        .translate(0, 100%);
+        .translate3d(0, 100%, 0);
+        &._active{
+            .translate(0, 10%);
+            .translate3d(0, 10%, 0);
+        }
+    }
+    &._bottom{
+        padding-bottom:10%;
+        .box-sizing();
+        .translate(0, -100%);
+        .translate3d(0, -100%, 0);
+        &._active{
+            .translate(0, -10%);
+            .translate3d(0, -10%, 0);
+        }
+    }
+    &__mask{
+        opacity:0;
+        .transition(opacity .5s ease-in 0.1s);
+        &._active{ opacity:1;}
+    }
+
+
+
+    &__icon{
+        position:absolute;
+        z-index:10;
+        //left:20/@px;
+        //top:20/@px;
+        left:0;
+        top:8/@px;
+        line-height:80/@px;
+        width:80/@px;
+        text-align:center;
+        //color:#48c6f6;
+        color:#fff;
+        font-size:32/@px;
+        &._active{}
+        &:before{
+            display:inline-block;
+            line-height:44/@px;
+            height:48/@px;
+            width:48/@px;
+            background:#48c6f6;
+            border-radius:48/@px;
+            text-align:center;
+        }
+    }
+}

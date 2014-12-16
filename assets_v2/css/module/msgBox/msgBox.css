@@ -1,0 +1,5 @@
+/*!
+ * Created By remiel.
+ * Date: 14-9-19
+ * Time: 上午9:45
+ */.ui-msg-box{display:none}.ui-msg-box__main{position:absolute;left:0;right:0;top:50%;margin:-7.5rem auto 0;width:18.125rem;padding:1.4375rem 0 .875rem;background:#fff;border-radius:.3125rem}.ui-msg-box__hd{font-size:1rem;margin-bottom:1rem;text-align:center}.ui-msg-box__bd{font-size:.875rem;padding:0 2.5rem;margin-bottom:1rem}.ui-msg-box__ft .u-box-flex__inner{text-align:center}.ui-msg-box__btn{display:inline-block;vertical-align:top;padding:0 .875rem;min-width:3.125rem;line-height:1.4375rem;color:#fff;font-size:.875rem;background:#7fe5f4;border-radius:.25rem}

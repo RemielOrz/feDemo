@@ -1,0 +1,1 @@
+define(["OE","Menu","lazyload","carousel","Calendar","DropBox","_","Modifier","TabSelection"],function(a,b,c,d,e,f,g,h,i){console.log("Page Module: orderDetail");var j=a.$,k=(a.utils,new i);j("#order-detail__sex").append(k.$el)});

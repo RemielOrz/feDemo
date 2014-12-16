@@ -1,0 +1,1 @@
+define(["OE"],function(a){function b(){{var a=d(".ui-drop-box");a.find(".ui-drop-box__hd"),a.find(".ui-drop-box__bd")}c||(a.on("tap.ui-drop-box",".ui-drop-box__switch",function(){var a=d(this),b=a.closest(".ui-drop-box");b.toggleClass("_on")}),c=1)}console.log("module:DropBox");{var c,d=a.$;a.utils}return b});

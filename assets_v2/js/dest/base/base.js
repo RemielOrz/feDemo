@@ -1,0 +1,1 @@
+!String.prototype.forMart&&(String.prototype.forMart=function(){var a=arguments,b=0;return this.replace(/%@([0-9]+)?/g,function(c,d){return d=d?parseInt(d,0)-1:b++,c=a[d],(null===c?"(null)":void 0===c?"":c).toString()})}),!String.prototype.getLength&&(String.prototype.getLength=function(a){return a&&this.length||Math.round(this.replace(/[^\x00-\xff]/g,"oo").length/2)});

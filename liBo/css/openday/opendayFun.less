@@ -1,0 +1,423 @@
+
+@n: 0.5*1;//ratio = 1;
+html{ font-size:16px;}
+@m: 16rem/@n;
+@img_base_url: "/assets/images/openday/opendayFun/";//图片路径
+//@img_base_url: "../../images/openday/opendayFun/";//图片路径
+@v: "?v=2014080801";
+
+@import "../lib/mixins";
+@import "../lib/reset";
+@import "../lib/common";
+
+//var
+@c_bdc:#e0e0e0;
+
+img{ width:100%; display:block;pointer-events:none}
+img[lazyload]{background:rgba(0,0,0,.1) url("/assets/images/common/logo_lazyload.png") no-repeat center center;}
+//
+body{ min-height:100%; font-size:28/@m;}
+.wrapper{ line-height:40/@m; color:#393939; font-size:28/@m; position:relative; overflow:hidden;}
+.inner{ margin:14/@m 12/@m; overflow:hidden;}
+
+.wx_indicator {background-image: url("http://weijing.qiniudn.com/promotion-indicator.png");}
+
+//gallery
+.gallery{ position:absolute; left:0; top:0; right:0; bottom:0/@m; overflow:hidden; background:#000;
+    ul,li,.m-carousel{ height:100%;}
+    ul{}
+    li{ background-color:#000; position:relative; overflow:hidden; opacity:0;}
+    img{.box-shadow(none);}
+//    .m-carousel-photos .m-item > img{ position:relative; top:50%;.translate(0, -50%)}
+    .m-carousel-controls,
+    .img_placeholder{background-image:url("../../images/common/logo_lazyload.png@{v}"); background-repeat:no-repeat; background-size:120/@m; background-position:center center;}
+    .img_hide,.wj_hide{ opacity:0;}
+    .img_show,.wj_show{ opacity:1;.transition(all .4s ease-in .01s);}
+    .m-carousel-inner {}
+    .m-item {
+        .item_bg {position: absolute; top:0; left:0;}
+    }
+    h1{ font-size:42/@m; font-weight:bold; margin:0; padding:0; line-height:1.6;
+        .translate3d(0,-250%,0); opacity:0;
+        &.wj_show{.translate3d(0,0,0);}
+    }
+    .info{ position:absolute; top:70/@m; left:100/@m; right:0; font-size:28/@m;}
+    .content{ padding:48/@m 90/@m 48/@m 20/@m; line-height:34/@m; color:#fff;
+        .translate3d(100%,0,0); opacity:0;
+        &.wj_show{.translate3d(0,0,0); opacity:1;}
+        span{ font-weight:bold;}
+    }
+    .exchange_btn{display:inline-block;width:84/@m; height:88/@m; position:relative;background:url("@{img_base_url}ico_01@2x.png@{v}") no-repeat; background-size:84/@m auto;
+        &.wj_show{.transition(all .4s ease-in .6s);}
+    }
+
+    .ico_03,.ico_04,.ico_05,.ico_06{ padding-left:38/@m; position:relative; margin-top:10/@m;
+        &:before{content:''; position:absolute; left:0; top:2/@m;width:32/@m; height:32/@m; background-size:32/@m auto; background-repeat:no-repeat;}
+    }
+    .ico_03:before{ background-image:url("@{img_base_url}ico_03@2x.png@{v}");}
+    .ico_04:before{ background-image:url("@{img_base_url}ico_04@2x.png@{v}");}
+    .ico_05:before{ background-image:url("@{img_base_url}ico_05@2x.png@{v}");}
+    .ico_06:before{ background-image:url("@{img_base_url}ico_06@2x.png@{v}");}
+
+
+    .m-active{
+        //.exchange_btn{ opacity:1;}
+    }
+    .op_0{ opacity:0;}
+    .op_1{ opacity:1;}
+
+}
+
+
+//home
+
+.ticket_btn{ width:440/@m; height:274/@m; background:url("http://weijing.qiniudn.com/opendayFun_ticket_btn.png") no-repeat; background-size:100% auto; position:absolute; bottom:0; left:0; right:0; margin:auto; z-index:999;
+    .transition(all .4s ease-in 0s);
+    .translate3d(0,0,0);
+}
+.ticket_btn_hide{.translate3d(0,50%,0);}
+
+.share_btn{ position:absolute; left:0; right:0; bottom:12/@m; width:110/@m; height:110/@m; margin:auto; background:url("@{img_base_url}ico_share@2x.png@{v}"); background-size:100% auto; z-index:999;
+    .transition(all .4s ease-in 0s);
+    .translate3d(0,150%,0);
+}
+.share_btn_show{.translate3d(0,0,0);}
+
+.home_02,.home_03,.home_04,.home_05,.home_06{ position:absolute; left:0; top:0; right:0; bottom:0; background-size:100% auto;.transition(all .4s ease-in 0s); background-repeat:no-repeat;}
+.home_02{ background-image:url("http://weijing.qiniudn.com/opendayFun_home_02.png");.scale(0.5);}
+.home_03{ background-image:url("http://weijing.qiniudn.com/opendayFun_home_03.png");
+    opacity:0;
+    &.wj_show{ opacity:1;.transition(all .4s ease-in .6s);}
+}
+.home_04{ background-image:url("http://weijing.qiniudn.com/opendayFun_home_04.png");
+    width:310/@m; height:308/@m; background-size:auto 100%; bottom:auto; top:104/@m; margin:auto;
+    .transform(scale(0.5) rotate(180deg)); opacity:0;
+    &.wj_show{.transform(scale(1) rotate(0deg)); opacity:1;.transition(all .6s ease-in .2s);}
+}
+.home_05{ background-image:url("http://weijing.qiniudn.com/opendayFun_home_05.png");
+    opacity:0;
+    //&.wj_show{ opacity:1;.transition(all .4s ease-in .6s);}
+    &.animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-delay:.7s;
+        animation-delay: .7s;
+    }
+}
+.home_06{ background-image:url("http://weijing.qiniudn.com/opendayFun_home_06.png");
+    opacity:0;
+    //&.wj_show{ opacity:1;.transition(all .4s ease-in .6s);}
+    &.animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-delay:.6s;
+        animation-delay: .6s;
+    }
+}
+.ico_07{ position:absolute; left:auto; bottom:auto; right:48/@m; opacity:0; width:110/@m; height:90/@m;
+    background-size:100% auto;background-repeat:no-repeat;
+    background-image:url("@{img_base_url}ico_07@2x.png");
+    .translate3d(0, 0, 0);
+    &.animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-delay:.6s;
+        animation-delay: .6s;
+    }
+}
+
+//instruction
+.instruction{ position:absolute; left:0; right:0; bottom:0; top:0; background:rgba(0,0,0,.5); z-index:999;
+    .transition(all .4s ease-in 0s);.translate3d(0,0,0);
+    &.wj_hide{.translate3d(-100%,0,0);}
+}
+
+.instruction_01,.instruction_02{ position:absolute; left:0; right:0; margin:auto;}
+.instruction_01{ top:0; bottom:0; width:540/@m; height:280/@m; background:url("http://weijing.qiniudn.com/opendayFun_instruction_01@2x.png") no-repeat; background-size:auto 100%;}
+.instruction_02{ bottom:12/@m; width:382/@m; height:300/@m; background:url("http://weijing.qiniudn.com/opendayFun_instruction_02@2x.png") no-repeat; background-size:100% auto;}
+
+//roll_wrap
+.roll_wrap{ opacity:0; font-size:24/@m; color:#fff;white-space:nowrap;line-height:40/@m; position:absolute; top:620/@m; left:150/@m; right:150/@m; z-index:1; overflow:hidden; margin:auto;
+
+    &.animated {
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-delay:1.6s;
+        animation-delay: 1.6s;
+    }
+}
+.roll_inner{ overflow:hidden;white-space:nowrap; float:left;}
+.roll_item{padding-bottom:12/@m; background:url("@{img_base_url}ico_roll@2x.png@{v}") repeat-x 0 bottom; background-size:auto 10/@m; display:inline-block;}
+
+//counter
+.counter{ position:absolute; right:0; top:28/@m; background:rgba(46,167,255,.4); padding:10/@m 24/@m; color:#fff; font-size:28/@m; opacity:0;
+    &:before{content:''; position:absolute; left:-6/@m; top:-10/@m; background:url("@{img_base_url}ico_count@2x.png@{v}") no-repeat; background-size:100% auto; width:28/@m; height:48/@m;}
+
+    &.animated {
+        -webkit-animation-duration: 1.6s;
+        animation-duration: 1.6s;
+        -webkit-animation-delay:1.6s;
+        animation-delay: 1.6s;
+    }
+}
+
+//loading
+.home_loading{ background:rgba(0,0,0,1); position:absolute; left:0; top:0; right:0; bottom:0; z-index:1000; color:#fff; text-align:center;
+    .translate3d(0,0,0); opacity:1;.transition(all 1s ease-in 0s);
+    .inner{ position:absolute; left:0; top:0; right:0; bottom:0; margin:auto; width:120/@m; height:160/@m; overflow:hidden; font-size:28/@m; line-height:40/@m;
+        &:before{content:''; display:block; width:120/@m; height:120/@m; border-radius:120/@m; background:url("http://weijing.qiniudn.com/common-logo120x120.png"); background-size:100% auto;}
+    }
+    &.done{/*.translate3d(0,100%,0);*/ opacity:0;}
+}
+.home_loading_bar{position:absolute; bottom:0; left:0; right:100%;height:4/@m; background:green;.transition(all 1.6s ease-in-out 0s);
+    &.done{.transition(all .4s ease-in 0s);}
+}
+
+//popup
+.popup{ background:rgba(0,0,0,.5); position:absolute; top:0; bottom:0; left:0; right:0; z-index:1000; display:none;}
+.popup_box{ position:absolute; left:0; right:0; top:50%;  margin:-170/@m auto 0; width:580/@m; padding:46/@m 0 28/@m; background:#fff; border-radius:10/@m;}
+.popup_hd{ font-size:32/@m; margin-bottom:32/@m; text-align:center;}
+.popup_bd{ font-size:28/@m; padding:0 80/@m; margin-bottom:32/@m;}
+.popup_ft{
+    .box_flex_inner{ text-align:center;}
+}
+.popup_btn{ display:inline-block;vertical-align:top; padding:0 28/@m;min-width:100/@m; line-height:46/@m; color:#fff; font-size:28/@m; background:#ea68a2; border-radius:8/@m;}
+
+//animate
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-delay:0s;
+    animation-delay: 0s;
+}
+
+.animated.infinite {
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+
+@-webkit-keyframes ico_exchange {
+    0%, 50%, 100%{
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+    25%, 75% {
+        -webkit-transform: translate3d(0,20/@m,0);
+        transform: translate3d(0,20/@m,0);
+    }
+}
+
+@keyframes ico_exchange {
+    0%, 50%, 100%{
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+    }
+    25%, 75% {
+        -webkit-transform: translate3d(0,20/@m,0);
+        transform: translate3d(0,20/@m,0);
+    }
+}
+
+.ico_exchange {
+    -webkit-animation-name: ico_exchange;
+    animation-name: ico_exchange;
+}
+
+
+@-webkit-keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px);
+        transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000px);
+        -ms-transform: translateY(-2000px);
+        transform: translateY(-2000px);
+    }
+
+    60% {
+        opacity: 1;
+        -webkit-transform: translateY(30px);
+        -ms-transform: translateY(30px);
+        transform: translateY(30px);
+    }
+
+    80% {
+        -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.bounceInDown {
+    -webkit-animation-name: bounceInDown;
+    animation-name: bounceInDown;
+}
+
+
+@-webkit-keyframes flipInX {
+    0% {
+        -webkit-transform: perspective(400px) rotateX(90deg);
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotateX(-10deg);
+        transform: perspective(400px) rotateX(-10deg);
+    }
+
+    70% {
+        -webkit-transform: perspective(400px) rotateX(10deg);
+        transform: perspective(400px) rotateX(10deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(400px) rotateX(0deg);
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+@keyframes flipInX {
+    0% {
+        -webkit-transform: perspective(400px) rotateX(90deg);
+        -ms-transform: perspective(400px) rotateX(90deg);
+        transform: perspective(400px) rotateX(90deg);
+        opacity: 0;
+    }
+
+    40% {
+        -webkit-transform: perspective(400px) rotateX(-10deg);
+        -ms-transform: perspective(400px) rotateX(-10deg);
+        transform: perspective(400px) rotateX(-10deg);
+    }
+
+    70% {
+        -webkit-transform: perspective(400px) rotateX(10deg);
+        -ms-transform: perspective(400px) rotateX(10deg);
+        transform: perspective(400px) rotateX(10deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(400px) rotateX(0deg);
+        -ms-transform: perspective(400px) rotateX(0deg);
+        transform: perspective(400px) rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+.flipInX {
+    -webkit-backface-visibility: visible !important;
+    -ms-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+}
+
+
+
+@-webkit-keyframes rollIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+        transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes rollIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+        -ms-transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+        transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+    }
+}
+
+.rollIn {
+    -webkit-animation-name: rollIn;
+    animation-name: rollIn;
+}
+
+
+
+@-webkit-keyframes animate_slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        -ms-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes animate_slide {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        -ms-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate_slide {
+    opacity:1;
+    -webkit-animation-name: animate_slide;
+    animation-name: animate_slide;
+}

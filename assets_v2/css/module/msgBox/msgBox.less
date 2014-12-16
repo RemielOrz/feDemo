@@ -1,0 +1,22 @@
+/*!
+ * Created By remiel.
+ * Date: 14-9-19
+ * Time: 上午9:45
+ */
+
+@img_base_url: "/assets/images/";//图片路径
+@v: "?v=2014061301";
+
+@import "../../lib/base_var";
+@import "../../lib/mixins";
+
+
+//msgBox
+.ui-msg-box{ display:none;}
+.ui-msg-box__main{ position:absolute; left:0; right:0; top:50%;  margin:-240/@m auto 0; width:580/@m; padding:46/@m 0 28/@m; background:#fff; border-radius:10/@m;}
+.ui-msg-box__hd{ font-size:32/@m; margin-bottom:32/@m; text-align:center;}
+.ui-msg-box__bd{ font-size:28/@m; padding:0 80/@m; margin-bottom:32/@m;}
+.ui-msg-box__ft{
+    .u-box-flex__inner{ text-align:center;}
+}
+.ui-msg-box__btn{ display:inline-block;vertical-align:top; padding:0 28/@m;min-width:100/@m; line-height:46/@m; color:#fff; font-size:28/@m; background:#7fe5f4; border-radius:8/@m;}

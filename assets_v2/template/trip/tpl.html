@@ -1,0 +1,130 @@
+<script type="text/template" id="template__line">
+    <div class="line">
+        <div class="__hd">
+            <div class="swipe">
+                <div class="swipe-wrap">
+                    <%_.each(product.description.imgs, function(item){%>
+                    <div class="swipe-item u-placeholder">
+                        <img src="http://weijing.qiniudn.com/u-placeholder_640x420.png" lazyload="<%=item%>"/>
+                    </div>
+                    <%});%>
+                </div>
+            </div>
+            <div class="__title"><%=product.title%></div>
+        </div>
+        <div class="__bd">
+            <div class="__price">
+                <a class="__price-btn j-form-btn" href="javascript:;">秒杀</a>
+                <div class="__price-box">
+                    <span id="j-line__origin-price"><%=currentPlan.originPrice%></span>
+                    <span id="j-line__discount-price"><%=currentPlan.discountPrice%></span>
+                </div>
+            </div>
+            <div class="__editor oefont-quote">
+                <div class="__editor-title">小编推荐</div>
+                <div class="__editor-content">
+                    <%=product.description.editor%>
+                </div>
+            </div>
+
+            <div class="__info">
+                <div class="ui-drop-box">
+                    <div class="__info-hd ui-drop-box__switch ui-drop-box__hd oefont oefont-calendar">
+                        出发时间
+                        <div class="__info-hd-date" id="j-line__start-at"><%=currentPlan.startAt%></div>
+                    </div>
+                    <div class="ui-drop-box__bd __info-bd" id="calendar"></div>
+                </div>
+                <div class="ui-drop-box _on">
+                    <div class="__info-hd ui-drop-box__switch ui-drop-box__hd oefont oefont-route">
+                        行程
+                    </div>
+                    <div class="ui-drop-box__bd __info-bd" id="j-line__trip-container">
+                        <div class="__trip">
+                            <div class="__trip-item">
+                                <div class="__trip-title">启程</div>
+                                <div class="__trip-content">
+                                    <%_.each(currentPlan.onwardTraffic, function(item){%>
+                                    <div class="__trip-flight">
+                                        <div class="__trip-flight-hd u-box-flex oefont-plane">
+                                            <div class="__trip-flight-city u-box-flex__inner">
+                                                <div><%=item.origin%></div>
+                                                <div class="__trip-flight-time"><%=item.originTime%></div>
+                                            </div>
+                                            <div class="__trip-flight-city u-box-flex__inner">
+                                                <div><%=item.destination%></div>
+                                                <div class="__trip-flight-time"><%=item.destinationTime%></div>
+                                            </div>
+                                        </div>
+                                        <div class="__trip-flight-no"><%=item.flight%></div>
+                                    </div>
+                                    <%});%>
+                                </div>
+                            </div>
+                            <div class="__trip-item">
+                                <div class="__trip-title __trip-title-day">
+                                    Day<br>1
+                                </div>
+                                <div class="__trip-content">
+                                    <table class="__trip-table">
+                                        <tr>
+                                            <td>广州广州广州广州广州</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="__trip-item">
+                                <div class="__trip-title">回程</div>
+                                <div class="__trip-content">
+                                    <%_.each(currentPlan.returnTraffic, function(item){%>
+                                    <div class="__trip-flight">
+                                        <div class="__trip-flight-hd u-box-flex oefont-plane">
+                                            <div class="__trip-flight-city u-box-flex__inner">
+                                                <div><%=item.origin%></div>
+                                                <div class="__trip-flight-time"><%=item.originTime%></div>
+                                            </div>
+                                            <div class="__trip-flight-city u-box-flex__inner">
+                                                <div><%=item.destination%></div>
+                                                <div class="__trip-flight-time"><%=item.destinationTime%></div>
+                                            </div>
+                                        </div>
+                                        <div class="__trip-flight-no"><%=item.flight%></div>
+                                    </div>
+                                    <%});%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-drop-box">
+                    <div class="__info-hd ui-drop-box__switch ui-drop-box__hd oefont oefont-cost">费用说明</div>
+                    <div class="ui-drop-box__bd __info-bd">
+                        <div class="__info-bd-desc"><%=product.description.cost%></div>
+                    </div>
+                </div>
+                <div class="ui-drop-box">
+                    <div class="__info-hd ui-drop-box__switch ui-drop-box__hd oefont oefont-visa">签证</div>
+                    <div class="ui-drop-box__bd __info-bd">
+                        <div class="__info-bd-desc"><%=product.description.visa%></div>
+                    </div>
+                </div>
+                <div class="ui-drop-box">
+                    <div class="__info-hd ui-drop-box__switch ui-drop-box__hd oefont oefont-notice">预订须知</div>
+                    <div class="ui-drop-box__bd __info-bd">
+                        <div class="__info-bd-desc"><%=product.description.booking%></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="__ft u-box-flex u-transition">
+            <div class="u-box-flex__inner">
+                <a href="tel:<%=product.description.tel%>" class="oefont-phone">电话咨询</a>
+            </div>
+            <div class="u-box-flex__inner">
+                <a href="#" class="oefont-price j-form-btn">预订</a>
+            </div>
+        </div>
+    </div>
+</script>

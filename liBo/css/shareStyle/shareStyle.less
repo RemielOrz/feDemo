@@ -1,0 +1,148 @@
+
+@n: 0.5*1;//ratio = 1;
+html{ font-size:16px;}
+@m: 16rem/@n;
+@img_base_url: "/assets/images/palao";//图片路径
+@v: "?v=20140709germany70brazil";
+
+@import "../lib/mixins";
+@import "../lib/reset";
+@import "../lib/common";
+
+//var
+@c_bdc:#e0e0e0;
+
+img{ width:100%; display:block;}
+img[lazyload]{background:rgba(0,0,0,.1) url("/assets/images/common/logo_lazyload.png") no-repeat center center;}
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+//
+body{ min-height:100%; font-size:28/@m;}
+.hd{}
+.wrapper{ line-height:40/@m; color:#393939; font-size:28/@m; position:relative; overflow:hidden;
+    .off{
+        &.content_inner{height:6*40/@m; overflow:hidden;}
+        & + .detail_btn{ display:block;}
+    }
+}
+.inner{ margin:14/@m 12/@m; overflow:hidden;}
+.title_01{ background:url("@{img_base_url}/title_01@2x.png@{v}") no-repeat;}
+.title_02{ background:url("@{img_base_url}/title_02@2x.png@{v}") no-repeat;}
+.title_03{ background:url("@{img_base_url}/title_03@2x.png@{v}") no-repeat;}
+.title_04{ background:url("@{img_base_url}/title_04@2x.png@{v}") no-repeat;}
+.title_05{ background:url("@{img_base_url}/title_05@2x.png@{v}") no-repeat;}
+.title{ width:325/@m; height:63/@m; background-size:100% auto; margin:16/@m auto 20/@m; position:relative; z-index:1;}
+.bg_01{ background:url("@{img_base_url}/bg_01@2x.png@{v}") repeat;}
+.bg_02{ top: 0 !important; height: 225/@m !important;  background:url("@{img_base_url}/bg_02@2x.jpg@{v}") no-repeat; background-size: 100% auto !important; background-position: left top !important; background-clip: content-box;}
+.bg_03{ background:url("@{img_base_url}/bg_03@2x.png@{v}") repeat;}
+.bg{ position:absolute; left:0; right:0; top:54/@m; height:78/@m; background-size:auto 100%; background-position:center center;}
+.content{position:relative; z-index:1; padding-bottom: 7/@m;
+    .content_inner {margin:0 30/@m 20/@m;}}
+.detail_btn{ width:88/@m; line-height:40/@m; background:#dd0003; color:#fff; text-align:center; position:absolute; right:40/@m; bottom:20/@m; z-index:2; display:none;
+    &:after{content:''; height:0; width:0; border:1px solid #dd0003; border-width:20/@m 10/@m; border-right-color:transparent; position:absolute; right:-10/@m; top:0; bottom:0;}
+}
+.mod_01{ background:#6cf5e5;
+    &>.content {margin-top: 10px;}
+    .img_box{ margin:0 20/@m 20/@m;}
+    img{ margin-bottom:18/@m;}
+}
+.mod_02{ background:#ffd202;
+    .inner{ background:#fff; border:1px solid #aeaeae; position:relative;
+        &:after{ content:'';position:absolute;border:1px solid #aeaeae; top:4/@m; left:6/@m; bottom:4/@m; right:6/@m;}
+    }
+    h2{ font-size:50/@m; line-height:1.2; margin-bottom:10/@m;}
+    .info{ margin-top:20/@m; width:100%;
+        td{ vertical-align:top;
+            &:first-child{ width:5em;}
+        }
+    }
+}
+.mod_03{ background:#e5ccff;
+    ul{}
+    .detail_btn{
+        &:after{ border-right-color:#e5ccff;}
+    }
+}
+.mod_03,.mod_08{
+    li{ padding-left:1em; position:relative;
+        &:before{content:''; position:absolute;left:12/@m;top:18/@m; width:6/@m; height:6/@m; border-radius:6/@m; background:#393939;}
+    }
+}
+.mod_04{ background:#edf2c5;
+    .detail_btn{
+        &:after{ border-right-color:#edf2c5;}
+    }
+}
+.mod_05{ background:#f2f2f2; padding-bottom:40/@m;
+    .bg{ top:auto; bottom:0;}
+}
+
+.ft{ height:50/@m; background-color: #f2f2f2;}
+.ft_inner{ position:fixed; bottom:0; left:0; right:0; z-index:3;height:110/@m; background:#f3edbb;}
+.ft_box {
+    padding:12/@m 26/@m;
+}
+.ft_btn,.btn_01{display:block;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing:
+    border-box;
+    text-align:center;
+    font-size:50/@m;
+    line-height:86/@m;
+    border: none;
+    border-radius:8/@m;
+    background:#f7ab00;
+    .box-shadow(0/@m 4/@m 0 #b37b35);
+    color:#ffffff;
+//    button 默认样式reset
+}
+
+
+//hd
+.hd{ position:relative; overflow:hidden;}
+.hd_content{ text-align:center; position:absolute; left:0; right:0; bottom:20/@m; font-size: 26/@m;
+    span{ display:inline-block;vertical-align:middle; line-height:32/@m; padding-top: 9/@m !important; padding-bottom: 9/@m !important;
+        &:last-child{ color:#fff; background:#4c4b40; padding:0 12/@m; border-radius:8/@m; font-size: 28/@m !important;}
+    }
+}
+
+
+//page_02
+.bdt{ border-top:1px solid @c_bdc;}
+.mod_06{ position:relative;padding:122/2/@m 0 10/@m; text-align:center; line-height:1.5; overflow:visible;
+    .ico_success{ background:url("@{img_base_url}/ico_success@2x.png@{v}") no-repeat; background-size:100% auto; width:122/@m; height:123/@m; position:absolute; left:0; right:0; top:-122/2/@m; margin:auto;}
+    .text_01{}
+    .text_02{ font-size:40/@m; color:#00a3ef;}
+}
+.mod_07{background:#f7f7f7;}
+.mod_07,.mod_11{  padding:24/@m 0 ;
+    .btn_01{ background:#2fc5ea;.box-shadow(4/@m 4/@m 0 rgba(15,127,154,.75)); font-size:42/@m; height:84/@m;text-shadow:none;}
+    .text_01{ line-height:1.5; margin:12/@m 26/@m 0;}
+}
+.mod_08{ padding:24/@m;}
+
+//page_03
+.mod_09{ line-height:90/@m; padding:0 24/@m; font-size:30/@m; background:#ffd202;
+    .ico_success{background:url("@{img_base_url}/ico_success@2x.png@{v}") no-repeat; background-size:100% auto; width:42/@m; height:42/@m; display:inline-block;vertical-align:-8/@m; font-size:0; line-height:0; margin-right:10/@m;}
+}
+.mod_10{ padding:24/@m 20/@m; background:#efefef;
+    table{ border:1px solid @c_bdc; width:100%; border-radius:8/@m; background:#fff;
+        tr{
+            &:first-child{
+                td{ border-top:0;}
+            }
+        }
+        td{ height:70/@m; text-align:center;.box-shadow(-1px 0 0 @c_bdc);.bdt;
+            &:first-child{ width:40%;}
+        }
+    }
+}
+.mod_11{}
+
+//
+.notification_logo{ background:url("/assets/images/common/logo@2x.png@{v}") no-repeat; background-size:100% auto; width:94/@m; height:105/@m; margin:60/@m auto 10/@m;}
+.wx_indicator{ background:rgba(0,0,0,.5) url('http://weijing.qiniudn.com/promotion-indicator.png') no-repeat center top; background-size:100% auto; position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%; z-index:9999; display:none;}

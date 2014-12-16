@@ -1,0 +1,5 @@
+/*!
+ * Created By remiel.
+ * Date: 14-9-19
+ * Time: 上午9:45
+ */.ui-calendar{text-align:center;color:#a5a5a5}.ui-calendar__bd,.ui-calendar__days{zoom:1}.ui-calendar__bd:before,.ui-calendar__days:before,.ui-calendar__bd:after,.ui-calendar__days:after{content:"";display:table}.ui-calendar__bd:after,.ui-calendar__days:after{clear:both}.ui-calendar__nav,.ui-calendar__prev,.ui-calendar__next{font-size:1.25rem;line-height:3rem;position:relative}.ui-calendar__week{font-size:.9375rem;line-height:2.4375rem}.ui-calendar__days{font-size:1.125rem;clear:both;color:#e5e5e5}.ui-calendar__day,.ui-calendar__week{width:14.28571429%;float:left}.ui-calendar__day{height:3.125rem}.ui-calendar__day-num{line-height:1.5625rem;width:1.5625rem;border-radius:1.5625rem;margin:auto}.ui-calendar__day-price{font-size:.5625rem;color:#45c8f4;line-height:.75rem}.ui-calendar__day-remain{font-size:.4375rem;color:#999;line-height:.625rem}.ui-calendar ._selectable{color:#45c8f4}.ui-calendar ._selected .ui-calendar__day-num{background:#45c8f4;color:#fff}.ui-calendar ._overlap{opacity:0}.ui-calendar__prev{left:0}.ui-calendar__next{right:0}.ui-calendar__prev,.ui-calendar__next{position:absolute;top:0}

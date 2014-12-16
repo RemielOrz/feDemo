@@ -1,0 +1,257 @@
+// 抽奖号页面
+/*
+  by sunaiwen
+*/
+@import "../lib/mixins";
+@import "../lib/reset";
+@import "../lib/common";
+
+@n: 0.5*1;//ratio = 1;
+html{ font-size:16px;}
+@m: 16rem/@n;
+
+// color
+@tic_global_color: #1b1b1b;
+@tic_color_white: #ffffff;
+@tic_btn_color: #f39800;
+
+// fontsize
+@tic_global_fontsize: 28/@m;
+@tic_ticket_number_fontsize: 40/@m;
+@tic_btn_fontsize: 42/@m;
+
+// width & height
+@tic_status_logo_width: 120/@m;
+@tic_status_logo_height: @tic_status_logo_width;
+@tic_btn_width: 570/@m;
+@tic_btn_height: 86/@m;
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+}
+
+body.tic {
+    color: @tic_global_color;
+    font-size: @tic_global_fontsize;
+    line-height: @tic_global_fontsize*1.5;
+    background-color: @tic_color_white;
+    min-height: 100%;
+    ul {
+        padding-left: @tic_global_fontsize*2;
+    }
+    li {
+        list-style: disc;
+    }
+}
+.tic-btn {
+    display: block;
+    border: none;
+    border-radius: 10/@m;
+    width: @tic_btn_width;
+    height: @tic_btn_height;
+    line-height: @tic_btn_height;
+    background-color: @tic_btn_color;
+    font-size: @tic_btn_fontsize;
+    text-align: center;
+    color: @tic_color_white;
+    font-weight: bold;
+}
+.tic-header {
+    & > img {
+        display: block;
+        width: 100%;
+    }
+}
+.tic-ticket {
+    text-align: center;
+    padding-bottom: 20/@m;
+    & > img {
+        display: block;
+        width: @tic_status_logo_width;
+        height: @tic_status_logo_height;
+        margin-top: -@tic_status_logo_height/2;
+    }
+    &-status {
+        color: #494949;
+    }
+    &-number {
+        font-size: @tic_ticket_number_fontsize;
+        line-height: 58/@m;
+    }
+}
+
+.tic-share {
+    padding: 35/@m 20/@m;
+    background-color: #f7f7f7;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    &>p {
+        margin-top: 10/@m;
+        font-size: 26/@m;
+        color: #373737;
+        padding-left: 10/@m;
+        padding-right: 10/@m;
+    }
+}
+
+.tic-explain {
+    padding: 20/@m 40/@m;
+}
+
+// some useful class
+// center block element
+.block-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.marginTm {
+    margin-top: 20/@m;
+}
+
+// ticket list
+// color
+@color-white: #ffffff;
+@color-block-border: #e4e4e4;
+@color-global-font: #1b1b1b;
+@color-header-p: #373737;
+@color-light-grey: #f5f5f5;
+@color-btn-orange: #ff9102;
+@tic_btn_color: #f39800;
+
+// width and height
+@width-table-td-left: 33.6%;
+@width-table-td-right: 66.7%;
+@width-tic-center-button: 440/@m;
+@tic_btn_width: 570/@m;
+@tic_btn_height: 86/@m;
+
+@height-footer-ad: 130/@m;
+
+// border
+@radius-border-global: 8/@m;
+
+// fs
+@tic_btn_fontsize: 42/@m;
+
+body.tic-center {
+    background-color: @color-white;
+    padding: 20/@m;
+    color: @color-global-font;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 28/@m;
+//    &.has-ad {
+//        padding-bottom: @height-footer-ad+20/@m;
+//    }
+}
+
+.tic-block {
+    border: 1px solid @color-block-border;
+    border-radius: @radius-border-global;
+    margin-bottom: 20/@m;
+    overflow: hidden;
+    &>header {
+        border-bottom: 1px solid @color-block-border;
+        background-color: @color-light-grey;
+        line-height: 114/@m;
+        padding-left: 20/@m;
+        padding-right: 20/@m;
+        &>span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        h1 {
+            font-size: 32/@m;
+            line-height: 44/@m;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        p {
+            color: @color-header-p;
+            font-size: 26/@m;
+            line-height: 34/@m;
+        }
+    }
+    &-content {
+        padding: 20/@m;
+        & > table {
+            width: 100%;
+            background-color: @color-light-grey;
+            border-collapse: collapse;
+            border: 1px solid @color-block-border;
+            border-radius: @radius-border-global;
+            overflow: hidden;
+            word-wrap: break-word;
+            tr {
+                th, td {
+                    text-align: center;
+                    border: 1px solid @color-block-border;
+                    &:first-child {
+                        width: 33.6%;
+                    }
+                    &:last-child {
+                        width: 66.7%;
+                    }
+                }
+                th {
+                    line-height: 70/@m;
+                }
+                td {
+                    line-height: 50/@m;
+                    padding: 10/@m;
+                    box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+                }
+            }
+        }
+        &>a {
+            margin-top: 20/@m;
+        }
+    }
+}
+
+.tic-ad {
+    position: absolute;
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding-left: 20/@m;
+    padding-right: 20/@m;
+    left: 0;
+    bottom: 20/@m;
+    border-radius: @radius-border-global;
+    & > a, & img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.tic-btn {
+    display: block;
+    border: none;
+    border-radius: 10/@m;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    width: @tic_btn_width;
+    height: @tic_btn_height;
+    line-height: @tic_btn_height;
+    background-color: @tic_btn_color;
+    font-size: @tic_btn_fontsize;
+    text-align: center;
+    color: @color-white;
+    font-weight: bold;
+}
+
+.tic-btn-center {
+    background-color: @color-btn-orange;
+    min-width: @width-tic-center-button;
+    max-width: 100%;
+    //    padding-left: 5/@m;
+    //    padding-right: 5/@m;
+    font-size: 32/@m;
+}

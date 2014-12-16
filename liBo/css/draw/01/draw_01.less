@@ -1,0 +1,167 @@
+@import "../draw";
+
+//
+.wx_indicator {background-image: url("@{img_base_url}01/draw_indicator.png");}
+
+//home
+.home_info{ position:absolute; top:0; left:0; right:0; z-index:1; width:640/@m; margin:auto; font-size:26/@m;white-space:nowrap;
+    .transition(opacity 1s ease-in .01s);
+    &:extend(.op_0);
+}
+.home_time{.transform-origin(0 0);.rotate(-18deg);  position:absolute; left:180/@m;/*top:160/@m;*/ bottom:0;
+    //&:extend(.op_0);
+    span{
+        &:first-child{ color:#fff;}
+        &:nth-child(2){ color:#00dda6;}
+    }
+}
+.home_count{ width:132/@m; height:(132-34*2)/@m; line-height:32/@m; padding:34/@m 0 ;background:#7de6f7; color:#212121; border-radius:66/@m; text-align:center; position:absolute; left:32/@m; /*top:70/@m;*/ bottom:0;
+    //&:extend(.op_0);
+    &:after{content:''; width:30/@m; height:30/@m; background:#7de6f7; position:absolute; right:14/@m; bottom:8/@m; z-index:-1;
+        .skew(20deg, 20deg);
+    }
+}
+.home_slider{ position:absolute; width:72/@m; height:52/@m; z-index:10; right:20/@m; bottom:220/@m;background:url("@{img_base_url}01/ico_slider_00@2x.png@{v}") no-repeat; background-size:71/@m 51/@m;
+    &.animated {
+        -webkit-animation-duration: 1.2s;
+        animation-duration: 1.2s;
+        -webkit-animation-delay:0s;
+        animation-delay: 0s;
+    }
+}
+.home_slider_01,
+.home_slider_02,
+.home_slider_03{ background:url("@{img_base_url}01/ico_slider_01.png@{v}") no-repeat; background-size:28/@m 50/@m; width:28/@m; height:50/@m; position:absolute;
+    &.animated {
+        -webkit-animation-duration: 1.2s;
+        animation-duration: 1.2s;
+    }
+}
+.home_slider_01{ left:0;
+    &.animated {
+        -webkit-animation-delay:.8s;
+        animation-delay: .8s;
+    }
+}
+.home_slider_02{ left:26/@m;
+    background-image:url("@{img_base_url}01/ico_slider_02.png@{v}") ;
+    &.animated {
+        -webkit-animation-delay:.4s;
+        animation-delay: .4s;
+    }
+}
+.home_slider_03{ left:52/@m;
+    background-image:url("@{img_base_url}01/ico_slider_03.png@{v}") ;
+    &.animated {
+        -webkit-animation-delay:0s;
+        animation-delay: 0s;
+    }
+}
+
+
+@-webkit-keyframes home_slider_item {
+    0% {
+        background-image:url("@{img_base_url}01/ico_slider_03.png@{v}") ;
+    }
+    50% {
+        background-image:url("@{img_base_url}01/ico_slider_02.png@{v}") ;
+    }
+    100% {
+        background-image:url("@{img_base_url}01/ico_slider_01.png@{v}") ;
+    }
+}
+
+@keyframes home_slider_item {
+    0% {
+        background-image:url("@{img_base_url}01/ico_slider_03.png@{v}") ;
+    }
+    50% {
+        background-image:url("@{img_base_url}01/ico_slider_02.png@{v}") ;
+    }
+    100% {
+        background-image:url("@{img_base_url}01/ico_slider_01.png@{v}") ;
+    }
+}
+
+.home_slider_item1 {
+    -webkit-animation-name: home_slider_item;
+    animation-name: home_slider_item;
+}
+@-webkit-keyframes home_slider {
+    0% {
+        .translate3d(50%,0,0);
+    }
+    100% {
+        .translate3d(0,0,0);
+    }
+}
+
+@keyframes home_slider {
+    0% {
+        .translate3d(50%,0,0);
+    }
+    100% {
+        .translate3d(0,0,0);
+    }
+}
+
+.home_slider_ani {
+    -webkit-animation-name: home_slider;
+    animation-name: home_slider;
+}
+
+
+//
+.item_03_01,
+.item_05_01,
+.item_07_01,
+.item_09_01,
+.item_10_01{ position:absolute; left:0; right:0; bottom:0; top:0; background-repeat:no-repeat; background-size:100% auto;
+    .translate3d(-100%,0,0);
+    &:extend(.op_0);
+    .transition(all .4s ease-in .1s);
+}
+.item_10_01{
+    //.translate3d(0,-400%,0);
+    .transition(all .8s ease-in .1s);
+}
+.m-active{
+    .item_03_01,
+    .item_05_01,
+    .item_07_01,
+    .item_09_01,
+    .item_10_01{
+        &:extend(.op_1);
+        .translate3d(0,0,0);
+    }
+}
+.item_03_01,
+.item_05_01,
+.item_07_01,
+.item_09_01{ background-position:center bottom;}
+.item_03_01{ background-image:url("http://weijing.qiniudn.com/draw_01_03_01_v2.png");}
+.item_05_01{ background-image:url("http://weijing.qiniudn.com/draw_01_05_01_v2.png");}
+.item_07_01{ background-image:url("http://weijing.qiniudn.com/draw_01_07_01_v2.png");}
+.item_09_01{ background-image:url("http://weijing.qiniudn.com/draw_01_09_01.png");}
+.item_10_01{ background-image:url("http://weijing.qiniudn.com/draw_01_10_01.png");}
+
+
+//rule
+.rule{ color:#fff; line-height:40/@m; /*margin:110/@m 30/@m 0;*/ position:absolute; z-index:2; top:110/@m; left:0; right:0; padding:0 30/@m;height:70%; overflow:hidden; width:auto;}
+//rankings
+.gallery .rankings{ color:#fff; background:#02c0e3; text-align:center; padding:32/@m;}
+.rankings_title{ font-size:36/@m; line-height:60/@m; font-weight:bold;}
+.rankings_table{ width:100%; margin:4/@m 0 20/@m 0;table-layout:fixed;
+    tr{
+        &:first-child{ color:#5be6ff;}
+    }
+    td{ height:50/@m;}
+}
+.my_info_title{border-top:1px dashed #fff; line-height:80/@m;}
+.my_info{ font-size:26/@m; line-height:40/@m; text-align:left;}
+
+//ft_inner btn
+.ft_inner{
+    &.wj_hide{.translate3d(0, 100%, 0);}
+    &.wj_show{.translate3d(0, 0, 0);}
+}

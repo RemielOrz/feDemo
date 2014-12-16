@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=no"/>
+    <title>Rolling in the deep</title>
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            background-color: #81b1d7;
+            min-height: 100%;
+        }
+        .roll-wrap {
+            overflow: hidden;
+        }
+        .roll-body {
+            white-space: nowrap;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<div class="roll-wrap">
+    <div class="roll-body">
+            <pre>
+                // default configuration
+                {
+                    infinite: false,
+                    reverse: false,
+                    direction: 'x'
+                    speed: 1,
+                }
+            </pre>
+        <pre>
+                // default configuration
+                {
+                    infinite: false,
+                    reverse: false,
+                    direction: 'x'
+                    speed: 1,
+                }
+            </pre>
+        <pre>
+                // default configuration
+                {
+                    infinite: false,
+                    reverse: false,
+                    direction: 'x'
+                    speed: 1,
+                }
+            </pre>
+        <pre>
+                // default configuration
+                {
+                    infinite: false,
+                    reverse: false,
+                    direction: 'x'
+                    speed: 1,
+                }
+            </pre>
+        <pre>
+                // default configuration
+                {
+                    infinite: false,
+                    reverse: false,
+                    direction: 'x'
+                    speed: 1,
+                }
+            </pre>
+    </div>
+</div>
+<script src="http://cdn.staticfile.org/zepto/1.0rc1/zepto.min.js"></script>
+<script src="js/rollit.js"></script>
+<script>
+    var rollList = $('.roll-wrap').roll({
+        infinite: true,
+        speed: 2,
+        direction: 'y',
+        reverse: true,
+        start: 0
+    });
+    rollList.roll('stop');
+    setTimeout(function(){
+        rollList.roll('recover');
+    }, 100);
+</script>
+</body>
+</html>

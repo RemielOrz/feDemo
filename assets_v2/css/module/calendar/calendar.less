@@ -1,0 +1,38 @@
+/*!
+ * Created By remiel.
+ * Date: 14-9-19
+ * Time: 上午9:45
+ */
+
+@img_base_url: "/assets/images/";//图片路径
+@v: "?v=2014061301";
+
+@import "../../lib/base_var";
+@import "../../lib/mixins";
+
+
+.ui-calendar{ text-align:center; color:#a5a5a5;
+    &__bd,&__days{.cf();}
+    &__nav,&__prev,&__next{ font-size:40/@m; line-height:96/@m; position:relative;}
+    &__week{ font-size:30/@m; line-height:78/@m;}
+    &__days{ font-size:36/@m; clear:both; color:#e5e5e5;}
+    &__day,&__week{width:1/7*100%; float:left;}
+    &__day{ height:100/@m;}
+    &__day-num{ line-height:50/@m; width:50/@m; border-radius:50/@m; margin:auto;}
+    &__day-price{ font-size:18/@m; color:#45c8f4; line-height:24/@m;}
+    &__day-remain{ font-size:14/@m; color:#999; line-height:20/@m;}
+
+    ._selectable{ color:#45c8f4;}
+    ._selected{
+        .ui-calendar__day-num{ background:#45c8f4; color:#fff;}
+    }
+    ._overlap{ opacity:0;}
+
+
+    &__prev{ left:0;}
+    &__next{ right:0;}
+    &__prev,&__next{
+        position:absolute;
+        top:0;
+    }
+}

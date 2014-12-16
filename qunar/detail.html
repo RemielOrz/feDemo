@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五一去哪儿玩</title>
+    <script type="text/javascript">
+        var scale = 1.0, ratio = 1, assetsHost = location.host+"/assets", assetsVersion = '1.0', isTestEnv = false;
+        (function() {
+            if (window.devicePixelRatio === 2 && window.navigator.appVersion.match(/iphone/gi)) {
+                scale = 0.5;
+                ratio = 2;
+            }else{
+
+            }
+            var text = '<meta name="viewport" content="initial-scale=' + scale + ', maximum-scale=' + scale +', minimum-scale=' + scale + ', user-scalable=no" />'
+                    + '<link' + ' type="text/css" rel="styleSheet" href="http://' + assetsHost + '/css/qunar_ratio_' + ratio + '.css?v=' + assetsVersion + '" />';
+            document.write(text);
+        })();
+    </script>
+    <script type="text/javascript">
+        var isWeixin = false;
+        var dataForWeixin={
+            appId:"",
+            MsgImg:"",
+            TLImg:"",
+            url: location.host+location.pathname+location.hash+location.search,
+            title:"五一去哪儿玩 | 微景旅游",
+            desc:"五一去哪儿玩",
+            fakeid:"",
+            callback:function(){}
+        };
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            isWeixin = true;
+            //WeixinJSBridge.call('hideToolbar');
+            //WeixinJSBridge.call('hideOptionMenu');
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                WeixinJSBridge.invoke('sendAppMessage',{
+                    //"appid":dataForWeixin.appId,
+                    "img_url":dataForWeixin.MsgImg,
+                    "img_width":"120",
+                    "img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title
+                }, function(res){(dataForWeixin.callback)();});
+            });
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                //(dataForWeixin.callback)();
+                WeixinJSBridge.invoke('shareTimeline',{
+                    "img_url":dataForWeixin.TLImg,
+                    //"img_width":"120",
+                    //"img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title + " -- " + dataForWeixin.desc
+                }, function(res){});
+            });
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+                WeixinJSBridge.invoke('shareWeibo',{
+                    "content":dataForWeixin.title,
+                    "url":dataForWeixin.url
+                }, function(res){(dataForWeixin.callback)();});
+            });
+            WeixinJSBridge.on('menu:share:facebook', function(argv){
+                (dataForWeixin.callback)();
+                WeixinJSBridge.invoke('shareFB',{
+                    "img_url":dataForWeixin.TLImg,
+                    //"img_width":"120",
+                    //"img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title
+                }, function(res){});
+            });
+        });
+    </script>
+    <!--ga-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-47409752-5', 'weijing.3dyou.cn');
+        ga('send', 'pageview', {
+            'page': window.location.href,
+            'title': '五一去哪儿玩'
+        });
+    </script>
+    <!--ga-->
+    <link rel="stylesheet" href="/assets/js/lib/carousel/carousel.css"/>
+    <link rel="stylesheet" href="/assets/js/lib/carousel/carousel-style.css"/>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="inner">
+        <div class="detail_hd">
+            <div class="slider m-carousel m-fluid m-carousel-photos">
+                <ul class="m-carousel-inner">
+                    <li class="img_placeholder m-item m-active">
+                        <!--图片链接放到lazyload里-->
+                        <img src="/assets/images/qunar/placeholder640x380@2x.png" lazyload="http://thumb.3dyou.cn/thumb/content/gallery/image/2014/0403/533d2649e9a42,c_fill,h_380,q_60,w_640.jpg" alt="loading..."/>
+                    </li>
+                </ul>
+                <!-- the controls -->
+                <div class="m-carousel-controls m-carousel-bulleted cf img_hide"></div>
+            </div>
+            <div class="detail_hd_info">
+                <div class="detail_hd_title">123123</div>
+            </div>
+        </div>
+        <div class="detail_bd">
+            <table class="detail_table">
+                <tr>
+                    <td><strong>地点:</strong></td>
+                    <td>三水荷花世界</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <a class="link_box detail_addr" href="map.html?name=微景旅游&content=五一去哪玩&lat=23.112129&lon=113.3298">123</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>门票:</strong></td>
+                    <td>全票60元(1.2米至1.5米儿童和65岁至 69岁老人、佛山地区老人60岁至64岁 半票）</td>
+                </tr>
+                <tr>
+                    <td><strong>时间:</strong></td>
+                    <td>三水荷花世界</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="detail_desc">五一三天假期，三水荷花世界推出“蛋蛋游”活 动，活动内容丰富多彩，既有游客参与的活动， 又有美食品尝的活动。五一三天假期，园区</div>
+                        <div class="detail_tips">
+                            温馨提示： <br/>
+                            活动三天，景区还邀请彩绘艺术家，开展鸡蛋彩 绘活动。有兴趣的游客也可以拿起笔，在鸡蛋上 面进行彩绘，绘出自己喜欢的图案。
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--bar-->
+        <div class="fixed_bar_container">
+            <div class="fixed_bar">
+                <div class="box_flex">
+                    <div class="box_flex_inner">
+                        <div class="fixed_bar_btn" id="wx_share">分享</div>
+                    </div>
+                    <div class="box_flex_inner">
+                        <div class="fixed_bar_btn">参加</div>
+                    </div>
+                </div>
+            </div>
+            <div class="wx_indicator" style="display: none;"></div>
+        </div>
+    </div>
+</div>
+<!--<div id="loading">loading...</div>-->
+
+<script type="text/javascript" src="/assets/js/lib/zepto.min.js"></script>
+<script type="text/javascript" src="/assets/js/lib/carousel/carousel.js"></script>
+<script type="text/javascript" src="/assets/js/qunar/app.js"></script>
+</body>
+</html>

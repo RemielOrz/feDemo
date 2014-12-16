@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+</head>
+<body>
+<script src="http://cdn.staticfile.org/require.js/2.1.14/require.min.js"></script>
+<!--<script type="text/javascript" src="countdown.js"></script>-->
+<script type="text/javascript">
+    require(['./countdown.js'], function(Countdown){
+        var doc = document;
+        /*
+                  * @param1 {number} deadline   结束时间时间戳,单位ms,或Date对象,默认Date.now()
+                  * @param2 {number} startTime  开始时间时间戳,单位ms,或Date对象,默认Date.now()
+                  * */
+        var countdown = new Countdown(new Date(2014,10,1), new Date(2014,8,31));
+        /*
+         * 监听每秒的回调
+         * @param1 {number} d 剩余天数
+         * @param2 {number} h 剩余小时数
+         * @param3 {number} m 剩余分钟数
+         * @param4 {number} s 剩余秒数
+         * */
+        countdown.tick(function(d,h,m,s){
+            doc.write(d+"天"+h+"小时"+m+"分"+s+"秒"+"<br>");
+        });
+    });
+</script>
+</body>
+</html>

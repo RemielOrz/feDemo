@@ -1,0 +1,56 @@
+<script type="text/template" id="template__trip">
+    <div class="__trip">
+        <div class="__trip-item">
+            <div class="__trip-title">启程</div>
+            <div class="__trip-content">
+                <%_.each(currentPlan.onwardTraffic, function(item){%>
+                <div class="__trip-flight">
+                    <div class="__trip-flight-hd u-box-flex oefont-plane">
+                        <div class="__trip-flight-city u-box-flex__inner">
+                            <div><%=item.origin%></div>
+                            <div class="__trip-flight-time"><%=item.originTime%></div>
+                        </div>
+                        <div class="__trip-flight-city u-box-flex__inner">
+                            <div><%=item.destination%></div>
+                            <div class="__trip-flight-time"><%=item.destinationTime%></div>
+                        </div>
+                    </div>
+                    <div class="__trip-flight-no"><%=item.flight%></div>
+                </div>
+                <%});%>
+            </div>
+        </div>
+        <div class="__trip-item">
+            <div class="__trip-title __trip-title-day">
+                Day<br>1
+            </div>
+            <div class="__trip-content">
+                <table class="__trip-table">
+                    <tr>
+                        <td>广州广州广州广州广州</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="__trip-item">
+            <div class="__trip-title">回程</div>
+            <div class="__trip-content">
+                <%_.each(currentPlan.returnTraffic, function(item){%>
+                <div class="__trip-flight">
+                    <div class="__trip-flight-hd u-box-flex oefont-plane">
+                        <div class="__trip-flight-city u-box-flex__inner">
+                            <div><%=item.origin%></div>
+                            <div class="__trip-flight-time"><%=item.originTime%></div>
+                        </div>
+                        <div class="__trip-flight-city u-box-flex__inner">
+                            <div><%=item.destination%></div>
+                            <div class="__trip-flight-time"><%=item.destinationTime%></div>
+                        </div>
+                    </div>
+                    <div class="__trip-flight-no"><%=item.flight%></div>
+                </div>
+                <%});%>
+            </div>
+        </div>
+    </div>
+</script>

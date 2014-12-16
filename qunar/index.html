@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>五一去哪儿玩</title>
+    <script type="text/javascript">
+        var scale = 1.0, ratio = 1, assetsHost = location.host+"/assets", assetsVersion = '1.0', isTestEnv = false;
+        (function() {
+            if (window.devicePixelRatio === 2 && window.navigator.appVersion.match(/iphone/gi)) {
+                scale = 0.5;
+                ratio = 2;
+            }else{
+
+            }
+            var text = '<meta name="viewport" content="initial-scale=' + scale + ', maximum-scale=' + scale +', minimum-scale=' + scale + ', user-scalable=no" />'
+                    + '<link' + ' type="text/css" rel="styleSheet" href="http://' + assetsHost + '/css/qunar_ratio_' + ratio + '.css?v=' + assetsVersion + '" />';
+            document.write(text);
+        })();
+    </script>
+    <script type="text/javascript">
+        var isWeixin = false;
+        var dataForWeixin={
+            appId:"",
+            MsgImg:"",
+            TLImg:"",
+            url: location.host+location.pathname+location.hash+location.search,
+            title:"五一去哪儿玩 | 微景旅游",
+            desc:"五一去哪儿玩",
+            fakeid:"",
+            callback:function(){}
+        };
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            isWeixin = true;
+            //WeixinJSBridge.call('hideToolbar');
+            //WeixinJSBridge.call('hideOptionMenu');
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                WeixinJSBridge.invoke('sendAppMessage',{
+                    //"appid":dataForWeixin.appId,
+                    "img_url":dataForWeixin.MsgImg,
+                    "img_width":"120",
+                    "img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title
+                }, function(res){(dataForWeixin.callback)();});
+            });
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                //(dataForWeixin.callback)();
+                WeixinJSBridge.invoke('shareTimeline',{
+                    "img_url":dataForWeixin.TLImg,
+                    //"img_width":"120",
+                    //"img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title + " -- " + dataForWeixin.desc
+                }, function(res){});
+            });
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+                WeixinJSBridge.invoke('shareWeibo',{
+                    "content":dataForWeixin.title,
+                    "url":dataForWeixin.url
+                }, function(res){(dataForWeixin.callback)();});
+            });
+            WeixinJSBridge.on('menu:share:facebook', function(argv){
+                (dataForWeixin.callback)();
+                WeixinJSBridge.invoke('shareFB',{
+                    "img_url":dataForWeixin.TLImg,
+                    //"img_width":"120",
+                    //"img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title
+                }, function(res){});
+            });
+        });
+    </script>
+    <!--ga-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-47409752-5', 'weijing.3dyou.cn');
+        ga('send', 'pageview', {
+            'page': window.location.href,
+            'title': '五一去哪儿玩'
+        });
+    </script>
+    <!--ga-->
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="inner">
+        <a class="list_item link_box img_placeholder" href="detail.html">
+            <!--图片链接放到lazyload里-->
+            <img src="/assets/images/qunar/placeholder640x380@2x.png" lazyload="http://thumb.3dyou.cn/thumb/content/gallery/image/2014/0403/533d2649e9a42,c_fill,h_380,q_60,w_640.jpg" alt="loading..."/>
+            <div class="list_item_tag_container">
+                <div class="list_item_distance fl">33</div>
+                <div class="list_item_join fl">12</div>
+            </div>
+            <div class="list_item_info">
+                <div class="list_item_title">123123</div>
+                <div class="list_item_place">1231231</div>
+            </div>
+        </a>
+    </div>
+</div>
+<!--<div id="loading">loading...</div>-->
+<script type="text/javascript" src="/assets/js/lib/zepto.min.js"></script>
+<script type="text/javascript" src="/assets/js/qunar/app.js"></script>
+</body>
+</html>

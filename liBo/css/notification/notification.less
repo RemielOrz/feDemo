@@ -1,0 +1,25 @@
+/*!
+ * Created By remiel.
+ * Date: 14-7-4
+ * Time: 上午9:15
+ */
+@n: 0.5*1;//ratio = 1;
+html{ font-size:16px;}
+@media screen and (min-width: 540px) {
+    html{ font-size:24px;}
+}
+@m: 16rem/@n;
+@img_base_url: "/assets/images/notification";//图片路径
+@v: "?v=2014070401";
+
+@import "../lib/mixins";
+@import "../lib/reset";
+@import "../lib/common";
+
+@c_bdc: #e4e4e4;
+
+body{ background:#ececec; font-size:28/@m;}
+.notification{ position:absolute; top:50%; left:0; right:0; margin:-40/@m auto 0;.translate3d(0,-50%,0); width:448/@m; border:3/@m solid @c_bdc; background:#fff; padding:138/@m 50/@m 30/@m; text-align:center; font-size:30/@m;
+    &:before{content:''; position:absolute; top:48/@m; left:0; right:0; margin:auto; background:url("@{img_base_url}/logo_212x65@2x.png@{v}") no-repeat; background-size:100% auto; width:212/@m; height:65/@m;}
+}
+.notification_btn{ display:block; color:#fff;font-size:40/@m; line-height:80/@m; text-align:center; width:432/@m; margin:40/@m auto 0; background:#19b1fc;.box-shadow(0 5/@m 0 rgba(0,95,142,.75)); border-radius:4/@m;}

@@ -1,0 +1,5 @@
+/*!
+ * Created By remiel.
+ * Date: 14-9-19
+ * Time: 上午9:45
+ */.ui-modifier{height:1.5rem;border:1px solid #45c8f4;color:#45c8f4;border-radius:.25rem;position:relative;text-align:center}.ui-modifier,.ui-modifier__bd,.ui-modifier__minus,.ui-modifier__plus{line-height:1.5rem;overflow:hidden}.ui-modifier__minus,.ui-modifier__plus{width:1.5625rem;position:absolute;top:0;bottom:0;font-size:.75rem;z-index:2}.ui-modifier__plus{right:0;border-left:1px solid #45c8f4}.ui-modifier__minus{left:0;border-right:1px solid #45c8f4}.ui-modifier__bd{position:absolute;left:1.5rem;right:1.5rem;top:0;bottom:0;width:3.0625rem}.ui-modifier__minus:before{content:'-'}.ui-modifier__plus:before{content:'+'}.ui-modifier__ipt,.ui-modifier__text{border:0;outline:0;height:1.5rem;width:100%;display:block;position:absolute;top:0;left:0;text-align:center;color:#45c8f4}.ui-modifier__bd,.ui-modifier__ipt{font-size:1rem}.ui-modifier__ipt{z-index:1}.ui-modifier__text{position:absolute;left:0;right:0;top:0}

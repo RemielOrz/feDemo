@@ -1,0 +1,30 @@
+@charset "utf-8";
+.slider-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.slider-inner {
+  width: 100%;
+  &.is-horizon {
+    white-space: nowrap;
+    font-size: 0;
+    //    todo: 这是一个为了也能去除 android 2.3 inline-block想出的一个办法。缺点很明显，就是会破坏 slider-inner 内部的字体和字体大小。
+    &--oldAndroid {
+      font-family: "arial";
+      font-size: 12px;
+      letter-spacing: -3px;
+    }
+
+    .slider-item {
+      width: 100%;
+      letter-spacing: normal;
+      display: inline-block;
+    }
+  }
+}
+.slider-item {
+  img {
+    display: block;
+    width: 100%;
+  }
+}

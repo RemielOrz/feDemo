@@ -1,0 +1,5 @@
+/*!
+ * Created By remiel.
+ * Date: 14-10-21
+ * Time: 下午2:05
+ */.ui-tab-selection{border:1px solid #45c8f4;border-radius:.25rem;position:relative;height:1.5rem;overflow:hidden;text-align:center}.ui-tab-selection__item{-webkit-box-shadow:-1px 0 0 #45c8f4;box-shadow:-1px 0 0 #45c8f4;background:#fff;color:#45c8f4}.ui-tab-selection ._selected{background:#45c8f4;color:#fff}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=luBe7WW3UB4GByjAFYGuRQTv&v=1.0"></script>
+    <title>五一去哪玩</title>
+    <style type="text/css">
+        body, html,#map {width: 100%;height: 100%;overflow: hidden;margin:0;} @media (max-device-width: 780px){#golist{display: block!important;}}#golist {display: none;}
+        a{text-decoration:none;}
+        .OE_title{ font-weight:bold;}
+        .OE_content a{ color:#fff;}
+    </style>
+
+
+    <script type="text/javascript">
+        var isWeixin = false;
+        var dataForWeixin={
+            appId:"",
+            MsgImg:'http://weijing.3dyou.cn/assets/images/common/logo120x120.png',
+            TLImg:'http://weijing.3dyou.cn/assets/images/common/logo120x120.png',
+            url: location.href,
+            title:"地图",
+            desc:"热门活动极力推荐，赶紧来看看！",
+            fakeid:"",
+            callback:function(){}
+        };
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            isWeixin = true;
+            //WeixinJSBridge.call('hideToolbar');
+            //WeixinJSBridge.call('hideOptionMenu');
+            WeixinJSBridge.on('menu:share:appmessage', function(argv){
+                WeixinJSBridge.invoke('sendAppMessage',{
+                    "appid":dataForWeixin.appId,
+                    "img_url":dataForWeixin.MsgImg,
+                    "img_width":"120",
+                    "img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title
+                }, function(res){(dataForWeixin.callback)();});
+            });
+            WeixinJSBridge.on('menu:share:timeline', function(argv){
+                //(dataForWeixin.callback)();
+                WeixinJSBridge.invoke('shareTimeline',{
+                    "img_url":dataForWeixin.TLImg,
+                    "img_width":"120",
+                    "img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title + " -- " + dataForWeixin.desc
+                }, function(res){});
+            });
+            WeixinJSBridge.on('menu:share:weibo', function(argv){
+                WeixinJSBridge.invoke('shareWeibo',{
+                    "content":dataForWeixin.title,
+                    "url":dataForWeixin.url
+                }, function(res){(dataForWeixin.callback)();});
+            });
+            WeixinJSBridge.on('menu:share:facebook', function(argv){
+                (dataForWeixin.callback)();
+                WeixinJSBridge.invoke('shareFB',{
+                    "img_url":dataForWeixin.TLImg,
+                    //"img_width":"120",
+                    //"img_height":"120",
+                    "link":dataForWeixin.url,
+                    "desc":dataForWeixin.desc,
+                    "title":dataForWeixin.title
+                }, function(res){});
+            });
+        });
+    </script>
+    <!--ga-->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-47409752-5', 'weijing.3dyou.cn');
+        ga('send', 'pageview', {
+            'page': window.location.href,
+            'title': '五一去哪儿玩 | 百度地图'
+        });
+    </script>
+    <!--ga-->
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>
+<script type="text/javascript">
+    var opts = {
+        title: 'title', //信息窗口title
+        content: 'content',//信息窗口内容
+        lon: 113.330984,//标注点坐标
+        lat: 23.112224,
+        region: '广州',//标注点城市
+        zoom: 14,//地图缩放
+        info: function(){
+            var tmp =   "<div class='OE_title'>" + this.title + "</div>" +
+                        "<div class='OE_content'>" + this.content +
+                            " | [<a href='javascript:baiduRouteSearch();'>去这里</a>]" +
+                        "</div>"
+            return tmp;
+        }
+    };
+    // 百度地图API功能
+    var map = new BMap.Map("map");            // 创建Map实例
+    var point = new BMap.Point(opts.lon, opts.lat);    // 创建点坐标
+    map.centerAndZoom(point, opts.zoom); // 初始化地图,设置中心点坐标和地图级别。
+    map.addControl(new BMap.ZoomControl());          //添加地图缩放控件
+    var marker1 = new BMap.Marker(point);  // 创建标注
+    map.addOverlay(marker1);              // 将标注添加到地图中
+
+    //创建信息窗口
+    var infoWindow1 = new BMap.InfoWindow(opts.info());
+    marker1.openInfoWindow(infoWindow1);
+    marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
+
+    //交通
+    function baiduRouteSearch(){
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(
+                    function(pos){
+                        console.log('定位成功:',pos);
+                        var routeSearch=new BMap.RouteSearch();
+                        var start = {
+                            name:""
+                        };
+                        var end = {
+                            latlng:new BMap.Point(opts.lon, opts.lat),
+                            name:""
+                        };
+                        var map_opts = {
+                            mode:BMAP_MODE_DRIVING,//公交、驾车、导航均修改该参数 BMAP_MODE_TRANSIT
+                            region: opts.region
+                        };
+                        start.latlng = new BMap.Point(pos.coords.longitude,pos.coords.latitude);
+                        routeSearch.routeCall(start,end,map_opts);
+                    },
+                    function(error)
+                    {
+                        switch(error.code)
+                        {
+                            case error.PERMISSION_DENIED:
+                                console.log("User denied the request for Geolocation.");
+                                break;
+                            case error.POSITION_UNAVAILABLE:
+                                console.log("Location information is unavailable.");
+                                break;
+                            case error.TIMEOUT:
+                                console.log("The request to get user location timed out.");
+                                break;
+                            case error.UNKNOWN_ERROR:
+                                console.log("An unknown error occurred.");
+                                break;
+                        }
+                    }
+            )
+        }
+    }
+
+
+</script>
